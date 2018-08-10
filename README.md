@@ -40,7 +40,7 @@ As we can see, the dataset does not contain column names.  You will need to manu
 
 Take a minute to visit the link above and get the names of each column.  There's no python magic needed here--you'll just need to copy and paste them over in the correct order as strings in a python array.  (It's not glamorous, but it's realistic.  This is a pretty common part of the Data Science Process.)
 
-In the cell below, create the array of column names and then set then use this array to set the correct column names for the `df` object.  
+In the cell below, create the array of column names and then use this array to set the correct column names for the `df` object.  
 
 **_NOTE:_** Be sure to read the Dataset Description/Documentation carefully.  Note that the last column of the dataset (we can call it `is_spam` is the last column of the actual dataset, although the data description has it at the top, not the bottom, of the list.  Make sure you get this column name in the right place, as it will be our target variable!
 
