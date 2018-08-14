@@ -33,6 +33,7 @@ In the cell below, read in the data from `spambase.csv`, store it in a DataFrame
 
 
 ```python
+# Test 1: Do not change variable name!
 df = pd.read_csv('spambase.csv', header=None)
 df.head()
 ```
@@ -219,6 +220,7 @@ In the cell below, create the array of column names and then set then use this a
 
 
 ```python
+# Test 2: Do not change variable name!
 column_names = ['word_freq_make',
     'word_freq_address',
     'word_freq_all',     
@@ -781,9 +783,11 @@ In the cell below:
 
 
 ```python
+# Test 3: Do not change variable names!
 target = df['is_spam']
 clean_df = df.drop('is_spam', axis=1, inplace=False)
 
+# Test 4: Do not change variable names!
 X_train, X_test, y_train, y_test = train_test_split(clean_df, target, stratify=target)
 ```
 
@@ -835,7 +839,10 @@ In the cell below, use the appropriate helper functions from sklearn to get the 
 
 
 ```python
+# Test 5: Do not change variable name!
 accuracy = accuracy_score(y_test, preds)
+
+# Test 6: Do not change variable name!
 f1 = f1_score(y_test, preds)
 
 print("Accuracy Score for model: {:.4}%".format(accuracy * 100))
@@ -879,6 +886,7 @@ Once you have completed this function, use it to create Confusion Matrices for b
 
 
 ```python
+# Test 7: Do not change variable name!
 def confusion_matrix(predictions, labels):
     labels = list(labels)
     cm = {'TP': 0, 'TN': 0, 'FP':0, 'FN':0}
@@ -898,9 +906,13 @@ def confusion_matrix(predictions, labels):
     
     return cm
 
-
+# Test 8: Do not change variable name!
 training_preds = clf.predict(X_train)
+
+# Test 9: Do not change variable name!
 training_cm = confusion_matrix(training_preds, y_train)
+
+# Test 10: Do not change variable name!
 testing_cm = confusion_matrix(preds, y_test)
 
 print("Training Confusion Matrix: {}".format(training_cm))
@@ -937,7 +949,7 @@ The False Positives rate (Predicted Spam but Is Email) are the emails getting ca
 Don't worry about tuning the model for now--that's a lengthy process, and we'll cover it in depth in later labs.  For now, congratulations--you just built a working spam filter using Naive Bayesian Classification!
 
 
-### Conlclusion
+### Conclusion
 
 In this lab, we:
 * Worked with a real-world dataset from the UCI Machine Learning Repository.
