@@ -1,10 +1,5 @@
 import pytest
-import pandas
-# import matplotlib
-# import seaborn
-import sklearn
-# import ipython
-from ipynb.fs.full.index import df, column_names,
+from ipynb.fs.full.index import df, column_names, target, clean_df, X_train, X_test, y_train, y_test, accuracy, f1, confusion_matrix, training_preds, training_cm, testing_cm
 
 def test_p1_training_cm():
     assert len(df) == 58
@@ -16,19 +11,23 @@ def test_p2_training_cm():
     assert 'word_freq_make' in column_names
 
 def test_p3_training_cm():
-    pass
+    assert target == df['is_spam']
 
 def test_p4_training_cm():
     pass
 
 def test_p5_training_cm():
-    pass
+    assert "{:.4}".format(accuracy) == "82.1"
 
 def test_p6_training_cm():
-    pass
+    assert "{:.4}".format(f1) == "80.49"
 
 def test_p7_training_cm():
-    pass
+    test_cm_expected = {"TP": 1, "TN": 2, "FP": 3, "FN": 4}
+    test_predictions = [1, 0, 0, 1, 1, 1, 0, 0, 0, 0]
+    test_labels = [1, 0, 0, 0, 0, 0, 1, 1, 1, 1]
+    test_cm_actual = confusion_matrix(test_predictions, test_labels)
+    assert test_cm_expected == test_cm_actual
 
 def test_p8_training_cm():
     pass
@@ -40,4 +39,7 @@ def test_p9_training_cm():
     assert training_cm["FN"] == 49
 
 def test_p10_training_cm():
-    pass
+    assert testing_cm["TP"] == 425
+    assert testing_cm["TN"] == 520
+    assert testing_cm["FP"] == 177
+    assert testing_cm["FN"] == 49
