@@ -14,7 +14,10 @@ def test_p3_training_cm():
     assert target == df['is_spam']
 
 def test_p4_training_cm():
-    pass
+    assert len(X_train) == len(y_train)
+    assert len(X_train) == 3450
+    assert len(X_test) == len(y_test)
+    assert len(X_test) == 1151
 
 def test_p5_training_cm():
     assert "{:.4}".format(accuracy) == "82.1"
@@ -30,7 +33,7 @@ def test_p7_training_cm():
     assert test_cm_expected == test_cm_actual
 
 def test_p8_training_cm():
-    pass
+    assert training_preds[:5] == [1, 0, 0, 1, 1]
 
 def test_p9_training_cm():
     assert training_cm["TP"] == 1310
