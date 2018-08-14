@@ -4,13 +4,16 @@ import pandas
 # import seaborn
 import sklearn
 # import ipython
-from ipynb.fs.full.index import *
+from ipynb.fs.full.index import df, column_names,
 
 def test_p1_training_cm():
-    pass
+    assert len(df) == 58
+    assert str(type(df)) == 'pandas.core.frame.DataFrame'
 
 def test_p2_training_cm():
-    pass
+    assert len(column_names) == 58
+    assert 'is_spam' in column_names
+    assert 'word_freq_make' in column_names
 
 def test_p3_training_cm():
     pass
