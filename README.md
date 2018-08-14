@@ -15,12 +15,14 @@ Run the cell below to import everything we'll need for this lab.
 ```python
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
+# import matplotlib.pyplot as plt
+# import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import accuracy_score, f1_score
-%matplotlib inline
+# Do not change the random seed, or else the tests will fail!
+np.random.seed(0)
+# %matplotlib inline
 ```
 
 For this lab, we'll be working with the [Spambase Dataset](https://archive.ics.uci.edu/ml/datasets/spambase) from [UC Irvine's Machine Learning Repository](https://archive.ics.uci.edu/ml/index.php). 
@@ -33,6 +35,7 @@ In the cell below, read in the data from `spambase.csv`, store it in a DataFrame
 
 
 ```python
+# Test 1: Do not change variable name!
 df = None
 ```
 
@@ -46,6 +49,7 @@ In the cell below, create the array of column names and then use this array to s
 
 
 ```python
+# Test 2: Do not chang variable name!
 column_names = None
 ```
 
@@ -80,9 +84,12 @@ In the cell below:
 
 
 ```python
+# Test 3: Do not change variable names!
 target = None
 clean_df = None
 
+
+# Test 4: Do not change variable names!
 X_train, X_test, y_train, y_test = None
 ```
 
@@ -127,7 +134,10 @@ In the cell below, use the appropriate helper functions from sklearn to get the 
 
 
 ```python
+# Test 5: Do not change variable name!
 accuracy = None
+
+# Test 6: Do not change variable name!
 f1 = None
 
 print("Accuracy Score for model: {:.4}%".format(accuracy * 100))
@@ -167,12 +177,17 @@ Once you have completed this function, use it to create Confusion Matrices for b
 
 
 ```python
+# Test 7: Do not change function signature!
 def confusion_matrix(predictions, labels):
     pass
 
-
+# Test 8: Do not change variable names!
 training_preds = None
-training_cm = None
+
+# Test 9: Do not change variable names!
+training_cm = {"TP": 1310, "TN": 1524, "FP": 567, "FN": 49}
+
+# Test 10: Do not change variable names!
 testing_cm = None
 
 print("Training Confusion Matrix: {}".format(training_cm))
