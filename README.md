@@ -20,6 +20,8 @@ import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import accuracy_score, f1_score
+# Do not change the seed, or else the tests will break!
+np.random.seed(0)
 %matplotlib inline
 ```
 
@@ -754,7 +756,7 @@ sns.heatmap(corr, mask=mask, cmap=cmap, vmax=.5, center=0,
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x2539b48e630>
+    <matplotlib.axes._subplots.AxesSubplot at 0x1cc83f12208>
 
 
 
@@ -849,8 +851,8 @@ print("Accuracy Score for model: {:.4}%".format(accuracy * 100))
 print("F1 Score for model: {:.4}%".format(f1 * 100))
 ```
 
-    Accuracy Score for model: 82.1%
-    F1 Score for model: 80.49%
+    Accuracy Score for model: 83.93%
+    F1 Score for model: 82.53%
     
 
 ### Digging Deeper: Using a Confusion Matrix
@@ -919,8 +921,8 @@ print("Training Confusion Matrix: {}".format(training_cm))
 print("Testing Confusion Matrix: {}".format(testing_cm))
 ```
 
-    Training Confusion Matrix: {'TP': 1310, 'TN': 1524, 'FP': 567, 'FN': 49}
-    Testing Confusion Matrix: {'TP': 425, 'TN': 520, 'FP': 177, 'FN': 29}
+    Training Confusion Matrix: {'TP': 1295, 'TN': 1536, 'FP': 555, 'FN': 64}
+    Testing Confusion Matrix: {'TP': 437, 'TN': 529, 'FP': 168, 'FN': 17}
     
 
 ### Intepreting Our Results
@@ -930,14 +932,14 @@ Complete the tables below, and then use them to answer the following questions.
 
 |  Training Results  | **Is Spam** | **Is Email** |
 |:---------------:|:-------:|:--------:|
-|  **Predicted Spam** |    1300     |    532      |
-| **Predicted Email** |     59    |     1559     |
+|  **Predicted Spam** |    1295     |    555      |
+| **Predicted Email** |     64    |     1536    |
 <br>
 
 |  Testing Results  | **Is Spam** | **Is Email** |
 |:---------------:|:-------:|:--------:|
-|  **Predicted Spam** |     433    |    196      |
-| **Predicted Email** |     21    |     501     |
+|  **Predicted Spam** |     437    |    168      |
+| **Predicted Email** |     17    |     529     |
 
 
 How many emails are getting caught up in the spam filter? How many spam emails are getting through the filter?  Is this a model you would recommend shipping to production? Why or why not?
